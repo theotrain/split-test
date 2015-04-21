@@ -1,0 +1,26 @@
+/ - if obj.errors.any?
+/   THE PARTIAL YO
+/   %div#error_explanation
+/     %h2
+/       = "#{pluralize(obj.errors.count, 'error')} prohibited this user from being saved"
+/     %ul
+/       - obj.errors.full_messages.each do |msg|
+/         %li
+/           = msg
+- if obj.errors.any?
+  THE PARTIAL YO
+  %div.alert.bg-danger
+    %a.close(data-dismiss="alert")
+      x
+    %ul
+      - obj.errors.full_messages.each do |msg|
+        %li
+          = msg
+
+
+
+
+/           <div class="alert">  
+/   <a class="close" data-dismiss="alert">×</a>  
+/   <strong>Warning!</strong> Best check yo self, you're not looking too good.  
+/ </div>

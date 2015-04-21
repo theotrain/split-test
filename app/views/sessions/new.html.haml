@@ -1,0 +1,13 @@
+%section.sign_in.container-fluid
+  .row
+    .col-sm-2
+    .col-sm-8
+      = bootstrap_form_tag url:"#{sign_in_path}" do |f|
+        %header
+          %h1(id='thick') Sign in
+          %fieldset
+            .form-group
+              = f.email_field :email, label: "Email Address"
+              = f.password_field :password
+              = f.form_group do
+                = f.submit "Sign In"

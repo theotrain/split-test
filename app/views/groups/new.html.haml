@@ -1,0 +1,19 @@
+%section.triptych
+  %h1(id='thick') New Split Test
+  / = render :partial => "form/errors", :locals => {:obj => @group}
+  %fieldset
+    .form-group
+      = form_for (setup_group(@group)) do |f|
+        %div Test Name
+        = f.text_field :name
+        %br
+        %br
+        %div Create options by adding text to 2 or 3 boxes.
+        .col-sm-12
+          = f.fields_for(:items) do |builder|
+            .col-sm-4
+              #inner    
+                = builder.text_area(:text, maxlength: 255)
+        = submit_tag "Create Split Test", class: 'btn btn-primary'
+      
+      

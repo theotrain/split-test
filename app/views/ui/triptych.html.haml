@@ -1,0 +1,21 @@
+%section.triptych
+  %h1 New Split Test
+  %fieldset
+    .form-group
+      = form_tag("/new_split_test", method: "post") do
+        %h5 Test Name
+        = text_field_tag "group_name"
+        %br
+        %br
+        %h5 Create options by adding text to 2 or 3 boxes.
+        .col-sm-12
+          .col-sm-4
+            #inner
+              = text_area_tag "text1", "First text area contents"
+          .col-sm-4
+            #inner
+              = text_area_tag "text2", "Second text area contents"
+          .col-sm-4
+            #inner
+              = text_area_tag "text3", "Third text area contents"
+        = submit_tag "Create Split Test", class: 'btn btn-primary'

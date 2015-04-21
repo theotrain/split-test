@@ -1,0 +1,17 @@
+%section.triptych
+  - if @group.class == Group
+    %h1(id='thick')
+      Pick your fave
+    #thick
+      = @group.name
+    %fieldset
+      .col-sm-12
+        - @group.items.each do |i|
+          .col-sm-4
+            = link_to(:controller => 'items', :action => 'vote', :id => i.id) do
+              #inner-display    
+                = i.text
+  - else
+    %h1(id='thick')
+      No split tests to vote on.
+    There are no split tests created by other users you haven't voted on.

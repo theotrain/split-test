@@ -1,0 +1,18 @@
+!!! 5
+%html(lang="en-US")
+  %head
+    %link(href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel='stylesheet' type='text/css')
+    %title T H E  S P L I T S  - Split Testing for Everyone
+    %meta(charset="UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = csrf_meta_tag
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+  %body(class="my-color")
+    %header
+      = render 'shared/header'
+    %section.content.clearfix
+      = render 'shared/messages'
+      = yield
+    / %footer
+    /   &copy 2015 TheSplits

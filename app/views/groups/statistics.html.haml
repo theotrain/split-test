@@ -1,0 +1,19 @@
+%section.triptych
+  %h1(id='thick')
+    = "#{current_user.screen_name.capitalize}'s Split Test Results"
+  - if @groups.empty?
+    No split tests found
+  - @groups.each do |group|
+    #thick
+      = group.name
+    #small-text
+      = "votes cast: #{vote_count(group)}"
+    %fieldset
+      .col-sm-12
+        - group.items.each do |i|
+          .col-sm-4
+            #inner-display
+              %h1(id='stats')
+                = "#{get_item_percent(i)}%"
+              #small-text
+                = i.text

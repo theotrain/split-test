@@ -1,0 +1,11 @@
+%section.triptych
+  %h1(id='thick')
+    = @group.name
+  %fieldset
+    .col-sm-12
+      - @group.items.each do |i|
+        .col-sm-4
+          = link_to(:controller => 'items', :action => 'vote', :id => i.id) do
+            #inner-display    
+              = i.text
+

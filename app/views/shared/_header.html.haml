@@ -1,0 +1,19 @@
+%section#top-header.row
+  %h1.col-md-3.col-sm-12.col-xs-12
+    = link_to "THE SPLIT", vote_path
+  - if logged_in?
+    %ul.col-md-5.col-sm-8.col-xs-12.clearfix.ul1
+      %li.navigation= link_to "Vote", vote_path
+      %li.navigation= link_to "New Split Test", new_group_path
+      %li.navigation= link_to "Test Results", statistics_path
+    %ul.col-md-4.col-sm-4.col-xs-12.pull-right
+      %li.dropdown
+        %a(href="#" id="dlabel" role="button" data-toggle="dropdown" class="dropdown-toggle" data-target="#")
+          Welcome, #{current_user.screen_name}
+          %b.caret
+        %ul.dropdown-menu(role="menu" aria-labelledby="dlabel")
+          %li
+            = link_to "Sign Out", sign_out_path
+  - else
+    %ul.col-md-5.col-sm-8.col-xs-12.clearfix.ul1
+      %li.navigation= link_to "Register New User", register_path

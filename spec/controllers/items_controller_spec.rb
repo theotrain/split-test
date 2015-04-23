@@ -17,7 +17,8 @@ describe ItemsController do
 
       it 'creates a new vote' do
         cat = Fabricate(:category)
-        group = Fabricate(:group, user: current_user, category: cat)
+        group = Group.new(user: current_user, category: cat, name: Faker::Lorem.word)
+        group.save(validate: false)
         item1 = Fabricate(:item, group: group)
         get :vote, id: item1.id
         expect(Vote.count).to eq(1)
